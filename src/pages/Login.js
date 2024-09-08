@@ -342,11 +342,172 @@
 // };
 
 // export default Login;
-import React, { useState } from 'react';
-import './Login.css';
-import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+
+// import React, { useState } from 'react';
+// import './Login.css';
+// import { useNavigate } from 'react-router-dom';
+
+// const Login = () => {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [errorMessage, setErrorMessage] = useState('');
+//   const navigate = useNavigate();
+
+//   const handleLogin = (e) => {
+//     e.preventDefault();
+//     // Placeholder login logic
+//     if (username === 'admin' && password === 'password') {
+//       localStorage.setItem('authToken', 'authenticated');
+//       navigate('/features'); // Redirect to features page upon successful login
+//     } else {
+//       setErrorMessage('Invalid username or password');
+//     }
+//   };
+
+//   return (
+//     <div className="login-container">
+//       <div className="login-box">
+//         <h2>Login</h2>
+//         <form onSubmit={handleLogin}>
+//           <div className="input-container">
+//             <input
+//               type="text"
+//               placeholder="Username"
+//               value={username}
+//               onChange={(e) => setUsername(e.target.value)}
+//               required
+//             />
+//           </div>
+//           <div className="input-container">
+//             <input
+//               type="password"
+//               placeholder="Password"
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//               required
+//             />
+//           </div>
+//           {errorMessage && <p className="error">{errorMessage}</p>}
+//           <button type="submit">Login</button>
+//         </form>
+//         <p className="switch-form">
+//           Don't have an account? <a href="/signup">Sign Up</a>
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+
+
+// import React, { useState } from 'react';
+// import './Login.css';
+// import { useNavigate, Link } from 'react-router-dom';
+
+// const Login = () => {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [errorMessage, setErrorMessage] = useState('');
+//   const navigate = useNavigate();
+
+//   const handleLogin = (e) => {
+//     e.preventDefault();
+//     // Placeholder login logic
+//     if (username === 'admin' && password === 'password') {
+//       localStorage.setItem('authToken', 'authenticated');
+//       navigate('/dashboard'); // Redirect to dashboard upon successful login
+//     } else {
+//       setErrorMessage('Invalid username or password');
+//     }
+//   };
+
+//   return (
+//     <div className="login-container">
+//       <div className="login-box">
+//         <h2>Login</h2>
+//         <form onSubmit={handleLogin}>
+//           <div className="input-container">
+//             <input
+//               type="text"
+//               placeholder="Username"
+//               value={username}
+//               onChange={(e) => setUsername(e.target.value)}
+//               required
+//             />
+//           </div>
+//           <div className="input-container">
+//             <input
+//               type="password"
+//               placeholder="Password"
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//               required
+//             />
+//           </div>
+//           {errorMessage && <p className="error">{errorMessage}</p>}
+//           <button type="submit">Login</button>
+//         </form>
+//         <p className="switch-form">
+//           Don't have an account? <Link to="/signup">Sign Up</Link>
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+// src/pages/Login.js
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// const Login = ({ setIsAuthenticated }) => {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+//   const navigate = useNavigate();
+
+//   const handleLogin = () => {
+//     // Mock authentication logic
+//     if (username === 'user' && password === 'password') {
+//       localStorage.setItem('authToken', 'dummyToken');
+//       setIsAuthenticated(true);
+//       navigate('/dashboard'); // Redirect to dashboard or home after login
+//     } else {
+//       alert('Invalid credentials');
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>Login</h2>
+//       <input
+//         type="text"
+//         placeholder="Username"
+//         value={username}
+//         onChange={(e) => setUsername(e.target.value)}
+//       />
+//       <input
+//         type="password"
+//         placeholder="Password"
+//         value={password}
+//         onChange={(e) => setPassword(e.target.value)}
+//       />
+//       <button onClick={handleLogin}>Login</button>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import './Login.css'; // Ensure you have the necessary styles
+
+const Login = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -357,7 +518,8 @@ const Login = () => {
     // Placeholder login logic
     if (username === 'admin' && password === 'password') {
       localStorage.setItem('authToken', 'authenticated');
-      navigate('/features'); // Redirect to features page upon successful login
+      setIsAuthenticated(true);
+      navigate('/dashboard'); // Redirect to dashboard upon successful login
     } else {
       setErrorMessage('Invalid username or password');
     }
@@ -390,7 +552,7 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
         <p className="switch-form">
-          Don't have an account? <a href="/signup">Sign Up</a>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
       </div>
     </div>
@@ -398,4 +560,3 @@ const Login = () => {
 };
 
 export default Login;
-
