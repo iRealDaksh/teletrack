@@ -7,7 +7,7 @@ body {
                 url(../assets/login.jpg) center/cover no-repeat; /* Add your background image */
     transition: background 2s ease-in-out; /* Smooth transition for background changes */
     height: 100vh;
-    overflow: hidden; /* Hide overflow on body to prevent unwanted scrollbars */
+    overflow: auto; /* Hide overflow on body to prevent unwanted scrollbars */
 }
 
 .login-container {

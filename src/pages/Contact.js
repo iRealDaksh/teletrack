@@ -8,30 +8,28 @@ const Contact = () => (
       <h1>Contact Us</h1>
       <p>We'd love to hear from you. Get in touch!</p>
     
-    {/* { <div
-      className="contact-container"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#fff',
-      }}
-    >
-
-    </div> } */}
     
-    <div className="contact-form-container" >
-      <form className="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Subject" />
-        <textarea placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    
+    <div className="contact-content">
+      <div className="contact-form-container" >
+        <form className="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div className="map-container">
+        <iframe
+          className="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0661505711896!2d80.15293081482233!3d12.842212990944416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUwJzMxLjkiTiA4MMKwMDknMTguNCJF!5e0!3m2!1sen!2sus!4v1631234567890!5m2!1sen!2sus&zoom=15&maptype=roadmap&markers=color:red%7Clabel:VIT%7C12.8422129,80.1551188"
+          allowFullScreen=""
+          loading="lazy"
+          title="Vellore Institute of Technology, Chennai Location"
+        ></iframe>
+      </div>
     </div>
 
     <div className="social-icons">
@@ -41,16 +39,6 @@ const Contact = () => (
     </div>
     
         
-    <div className="map-container">
-      <iframe
-        className="map-embed"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.225429098615!2d144.96312331535497!3d-37.81421797975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218cee20!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1639631214542!5m2!1sen!2sin"
-        allowFullScreen=""
-        loading="lazy"
-        title="Contact Map"
-      ></iframe>
-    </div>
-    
     </section>
   </div>
 );

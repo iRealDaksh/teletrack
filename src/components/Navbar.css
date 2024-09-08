@@ -48,7 +48,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: #1e1e2f;
     color: white;
     display: flex;
@@ -60,7 +60,7 @@
   
   .navbar-logo a {
     color: #ffffff;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     text-decoration: none;
   }
@@ -68,16 +68,16 @@
   .NavLinks {
     list-style: none;
     display: flex;
-    margin-left: 62%;
+    margin-left: auto;
   }
   
   .NavLinks li {
-    margin-left: 25px;
+    margin-left: 20px;
   }
   
   .NavLinks a {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     transition: color 0.3s;
   }
