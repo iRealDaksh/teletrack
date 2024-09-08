@@ -13,7 +13,7 @@
   .contact-hero {
     text-align: center;
     padding: 50px 0;
-    background: url('E:/sih/pro123/src/assets/background123.jpeg') no-repeat center center/cover;
+    background: url('../assets/background123.jpeg') no-repeat center center/cover;
     background-size: cover;
     height: 100vh;
   }

@@ -10,7 +10,7 @@ body {
     overflow: hidden; /* Hide overflow on body to prevent unwanted scrollbars */
 }
 
-.login-container {
+.signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,8 +33,7 @@ body {
     text-decoration: underline;
   }
   
-
-.login-box {
+.signup-box {
     background: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 10px;

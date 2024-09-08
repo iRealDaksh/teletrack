@@ -354,7 +354,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Placeholder login logic, you can replace this with actual authentication
+    // Placeholder login logic
     if (username === 'admin' && password === 'password') {
       localStorage.setItem('authToken', 'authenticated');
       navigate('/features'); // Redirect to features page upon successful login
@@ -389,9 +389,13 @@ const Login = () => {
           {errorMessage && <p className="error">{errorMessage}</p>}
           <button type="submit">Login</button>
         </form>
+        <p className="switch-form">
+          Don't have an account? <a href="/signup">Sign Up</a>
+        </p>
       </div>
     </div>
   );
 };
 
 export default Login;
+

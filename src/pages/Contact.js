@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.css';
-import backgroundImage from 'E:/sih/pro123/src/assets/call.jpg';
+import backgroundImage from '../assets/call.jpg';
 
 const Contact = () => (
   <div className="contact-page">
