@@ -435,7 +435,7 @@ import Dashboard from './pages/Dashboard';
 import AddTruck from './pages/AddTruck';
 import Tracking from './pages/Tracking';
 import TruckAnalytics from './pages/TruckAnalytics';
-import DriverInfo from './pages/DriverInfo';
+import DriverInfo from './pages/DriverDetails';
 import Contact from './pages/Contact';
 import Features from './pages/Features'; // Import Features
 
