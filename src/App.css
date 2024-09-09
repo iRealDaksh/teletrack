@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+body, a, button {
+  cursor: url('./assets/truck-cursor.svg') 16 16, auto;
+}

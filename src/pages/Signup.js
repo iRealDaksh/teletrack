@@ -1,264 +1,60 @@
-// import React, { useState } from 'react';
-// import './Signup.css';
-// import { useNavigate } from 'react-router-dom';
-
-// const Signup = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [errorMessage, setErrorMessage] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleSignup = (e) => {
-//     e.preventDefault();
-//     // Placeholder signup logic
-//     if (username && password) {
-//       localStorage.setItem('authToken', 'authenticated');
-//       navigate('/features'); // Redirect to features page upon successful signup
-//     } else {
-//       setErrorMessage('Please fill in both fields');
-//     }
-//   };
-
-//   return (
-//     <div className="signup-container">
-//       <div className="signup-box">
-//         <h2>Sign Up</h2>
-//         <form onSubmit={handleSignup}>
-//           <div className="input-container">
-//             <input
-//               type="text"
-//               placeholder="Username"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//               required
-//             />
-//           </div>
-//           <div className="input-container">
-//             <input
-//               type="password"
-//               placeholder="Password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               required
-//             />
-//           </div>
-//           {errorMessage && <p className="error">{errorMessage}</p>}
-//           <button type="submit">Sign Up</button>
-//         </form>
-//         <p className="switch-form">
-//           Already have an account? <a href="/login">Login</a>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-
-
-
-// import React, { useState } from 'react';
-// import './Signup.css';
-// import { useNavigate, Link } from 'react-router-dom';
-
-// const Signup = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [errorMessage, setErrorMessage] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleSignup = (e) => {
-//     e.preventDefault();
-//     // Placeholder signup logic
-//     if (username && password) {
-//       localStorage.setItem('authToken', 'authenticated');
-//       navigate('/dashboard'); // Redirect to dashboard upon successful signup
-//     } else {
-//       setErrorMessage('Please fill in both fields');
-//     }
-//   };
-
-//   return (
-//     <div className="signup-container">
-//       <div className="signup-box">
-//         <h2>Sign Up</h2>
-//         <form onSubmit={handleSignup}>
-//           <div className="input-container">
-//             <input
-//               type="text"
-//               placeholder="Username"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//               required
-//             />
-//           </div>
-//           <div className="input-container">
-//             <input
-//               type="password"
-//               placeholder="Password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               required
-//             />
-//           </div>
-//           {errorMessage && <p className="error">{errorMessage}</p>}
-//           <button type="submit">Sign Up</button>
-//         </form>
-//         <p className="switch-form">
-//           Already have an account? <Link to="/login">Login</Link>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-
-
-// src/pages/Signup.js
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
-// const Signup = ({ setIsAuthenticated }) => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleSignup = () => {
-//     // Mock signup logic
-//     if (username && password) {
-//       localStorage.setItem('authToken', 'dummyToken');
-//       setIsAuthenticated(true);
-//       navigate('/dashboard'); // Redirect to dashboard or home after signup
-//     } else {
-//       alert('Please fill in both fields');
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Signup</h2>
-//       <input
-//         type="text"
-//         placeholder="Username"
-//         value={username}
-//         onChange={(e) => setUsername(e.target.value)}
-//       />
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//       <button onClick={handleSignup}>Signup</button>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-// import React, { useState } from 'react';
-// import './Signup.css'; // Ensure you have the necessary styles
-// import { useNavigate, Link } from 'react-router-dom';
-
-// const Signup = ({ setIsAuthenticated }) => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [errorMessage, setErrorMessage] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleSignup = (e) => {
-//     e.preventDefault();
-//     // Placeholder signup logic
-//     if (username && password) {
-//       localStorage.setItem('authToken', 'authenticated');
-//       setIsAuthenticated(true);
-//       navigate('/dashboard'); // Redirect to dashboard upon successful signup
-//     } else {
-//       setErrorMessage('Please fill in both fields');
-//     }
-//   };
-
-//   return (
-//     <div className="signup-container">
-//       <div className="signup-box">
-//         <h2>Sign Up</h2>
-//         <form onSubmit={handleSignup}>
-//           <div className="input-container">
-//             <input
-//               type="text"
-//               placeholder="Username"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//               required
-//             />
-//           </div>
-//           <div className="input-container">
-//             <input
-//               type="password"
-//               placeholder="Password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               required
-//             />
-//           </div>
-//           {errorMessage && <p className="error">{errorMessage}</p>}
-//           <button type="submit">Sign Up</button>
-//         </form>
-//         <p className="switch-form">
-//           Already have an account? <Link to="/login">Login</Link>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-
 import React, { useState } from 'react';
-import './Signup.css'; // Ensure you have the necessary styles
 import { useNavigate, Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
+import './Signup.css';
 
-const Signup = ({ setIsAuthenticated }) => {
-  const [username, setUsername] = useState('');
+const Signup = () => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    // Placeholder signup logic
-    if (username && password) {
-      localStorage.setItem('authToken', 'authenticated');
-      setIsAuthenticated(true); // Update authentication state
-      navigate('/dashboard'); // Redirect to dashboard upon successful signup
-    } else {
-      setErrorMessage('Please fill in both fields');
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      setShowSuccessPopup(true);
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+        navigate('/dashboard');
+      }, 3000);
+    } catch (error) {
+      setErrorMessage(error.message);
+      // Handle specific error codes
+      if (error.code === 'auth/email-already-in-use') {
+        setErrorMessage('This email is already registered. Please try logging in.');
+      }
     }
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-box">
+    <motion.div
+      className="signup-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className="signup-box"
+        initial={{ y: -50 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+      >
         <h2>Sign Up</h2>
         <form onSubmit={handleSignup}>
-          <div className="input-container">
+          <motion.div className="input-container" whileHover={{ scale: 1.05 }}>
             <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-          </div>
-          <div className="input-container">
+          </motion.div>
+          <motion.div className="input-container" whileHover={{ scale: 1.05 }}>
             <input
               type="password"
               placeholder="Password"
@@ -266,15 +62,41 @@ const Signup = ({ setIsAuthenticated }) => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
+          </motion.div>
           {errorMessage && <p className="error">{errorMessage}</p>}
-          <button type="submit">Sign Up</button>
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Sign Up
+          </motion.button>
         </form>
         <p className="switch-form">
           Already have an account? <Link to="/login">Login</Link>
         </p>
-      </div>
-    </div>
+      </motion.div>
+      <AnimatePresence>
+        {showSuccessPopup && (
+          <motion.div
+            className="popup-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="success-popup"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+            >
+              <h3>Signup Successful!</h3>
+              <p>Welcome to TeleTrack. Redirecting to dashboard...</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 

@@ -1,136 +1,57 @@
-// // src/components/Navbar.js
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import './Navbar.css'; // Import corresponding CSS
-// import styled from 'styled-components';
-
-// const Navbar = () => (
-//   <nav className="navbar">
-//     <div className="navbar-logo">
-//       <Link to="/">TeleTrack</Link>
-//     </div>
-//     <ul className="navbar-links">
-//       <li><Link to="/tracking">Tracking</Link></li>
-//       <li><Link to="/dashboard">Dashboard</Link></li>
-//       <li><Link to="/reports">Reports</Link></li>
-//       <li><Link to="/contact">Contact</Link></li>
-//     </ul>
-//   </nav>
-// );
-
-// export default Navbar;
-// // src/components/Navbar.js
-
-
-// const Nav = styled.nav`
-//   display: flex;
-//   justify-content: space-between;
-//   background-color: #1e1e2f;
-//   padding: 15px 30px;
-// `;
-
-// const Logo = styled.div`
-//   a {
-//     color: #ffffff;
-//     font-size: 28px;
-//     font-weight: bold;
-//     text-decoration: none;
-//   }
-// `;
-
-// const NavLinks = styled.ul`
-//   list-style: none;
-//   display: flex;
-//   align-items: center;
-
-//   li {
-//     margin-left: 25px;
-
-//     a {
-//       color: #ffffff;
-//       font-size: 18px;
-//       text-decoration: none;
-//       transition: color 0.3s;
-
-//       &:hover {
-//         color: #e67e22;
-//       }
-//     }
-//   }
-// `;
-
-// Use these styled components in your Navbar component
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import styled from 'styled-components';
-
-// const Nav = styled.nav`
-//   display: flex;
-//   justify-content: space-between;
-//   background-color: #1e1e2f;
-//   padding: 15px 30px;
-// `;
-
-// const Logo = styled.div`
-//   a {
-//     color: #ffffff;
-//     font-size: 28px;
-//     font-weight: bold;
-//     text-decoration: none;
-//   }
-// `;
-
-// const NavLinks = styled.ul`
-//   list-style: none;
-//   display: flex;
-//   align-items: center;
-
-//   li {
-//     margin-left: 25px;
-
-//     a {
-//       color: #ffffff;
-//       font-size: 18px;
-//       text-decoration: none;
-//       transition: color 0.3s;
-
-//       &:hover {
-//         color: #e67e22;
-//       }
-//     }
-//   }
-// `;
-
-// const Navbar = () => (
-//   <Nav>
-//     <Logo>
-//       <Link to="/">TeleTrack</Link>
-//     </Logo>
-//     <NavLinks>
-//       <li><Link to="/login">Login</Link></li>
-//       <li><Link to="/features">Features</Link></li>
-//       <li><Link to="/contact">Contact</Link></li>
-//     </NavLinks>
-//   </Nav>
-// );
-
-// export default Navbar;
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css'; // Import the updated CSS
+import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { signOut } from "firebase/auth";
+import { auth } from '../firebase';
+import './Navbar.css';
 
-const Navbar = () => (
-  <nav className="Nav">
-    <div className="navbar-logo">
-      <Link to="/">TeleTrack</Link>
-    </div>
-    <ul className="NavLinks">
-      <li><Link to="/login">Login</Link></li>
-      <li><Link to="/signup">Sign Up</Link></li> {/* Add the signup link */}
-      <li><Link to="/features">Features</Link></li>
-      <li><Link to="/contact">Contact</Link></li>
-    </ul>
-  </nav>
-);
+const Navbar = ({ isAuthenticated }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/');
+    } catch (error) {
+      console.error("Error signing out: ", error);
+    }
+  };
+
+  return (
+    <motion.nav
+      className="Nav"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="navbar-logo">
+        <Link to={isAuthenticated ? "/dashboard" : "/"}>TeleTrack</Link>
+      </div>
+      <ul className="NavLinks">
+        {isAuthenticated ? (
+          <>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/dashboard">Dashboard</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/tracking">Tracking</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/driver-info">Driver Info</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/trip-scheduling">Trip Scheduling</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/fuel-consumption">Fuel Consumption</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/maintenance">Maintenance</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/alerts">Alerts</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}>
+              <button className="logout" onClick={handleLogout}>Logout</button>
+            </motion.li>
+          </>
+        ) : (
+          <>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/login">Login</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/signup">Sign Up</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/features">Features</Link></motion.li>
+            <motion.li whileHover={{ scale: 1.1 }}><Link to="/contact">Contact</Link></motion.li>
+          </>
+        )}
+      </ul>
+    </motion.nav>
+  );
+};
 
 export default Navbar;
