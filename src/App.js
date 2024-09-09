@@ -424,6 +424,52 @@
 // export default App
 
 
+// import React, { useState } from 'react';
+// import { Routes, Route, useNavigate } from 'react-router-dom';
+// import Navbar from './components/Navbar';
+// import NavbarLoggedIn from './components/NavbarLoggedIn';
+// import Home from './pages/Home';
+// import Login from './pages/Login';
+// import Signup from './pages/Signup';
+// import Dashboard from './pages/Dashboard';
+// import AddTruck from './pages/AddTruck';
+// import Tracking from './pages/Tracking';
+// import TruckAnalytics from './pages/TruckAnalytics';
+// import DriverInfo from './pages/DriverDetails';
+// import Contact from './pages/Contact';
+// import Features from './pages/Features'; // Import Features
+
+// const App = () => {
+//   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('authToken'));
+//   const navigate = useNavigate();
+
+//   const handleLogout = () => {
+//     localStorage.removeItem('authToken');
+//     setIsAuthenticated(false);
+//     navigate('/'); // Redirect to home page
+//   };
+
+//   return (
+//     <>
+//       {isAuthenticated ? <NavbarLoggedIn onLogout={handleLogout} /> : <Navbar />}
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+//         <Route path="/signup" element={<Signup setIsAuthenticated={setIsAuthenticated} />} />
+//         <Route path="/dashboard" element={<Dashboard />} />
+//         <Route path="/add-truck" element={<AddTruck />} />
+//         <Route path="/tracking" element={<Tracking />} />
+//         <Route path="/truck-analytics" element={<TruckAnalytics />} />
+//         <Route path="/driver-info" element={<DriverInfo />} />
+//         <Route path="/contact" element={<Contact />} />
+//         <Route path="/features" element={<Features />} /> {/* Add Features route */}
+//       </Routes>
+//     </>
+//   );
+// };
+
+// export default App;
+
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -434,10 +480,13 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import AddTruck from './pages/AddTruck';
 import Tracking from './pages/Tracking';
-import TruckAnalytics from './pages/TruckAnalytics';
 import DriverInfo from './pages/DriverDetails';
 import Contact from './pages/Contact';
 import Features from './pages/Features'; // Import Features
+import FuelConsumption from './pages/FuelConsumption'; // Import FuelConsumption
+import TripScheduling from './pages/TripScheduling'; // Import TripScheduling
+import Maintenance from './pages/Maintenance'; // Import Maintenance
+import Alerts from './pages/Alerts'; // Import Alerts
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('authToken'));
@@ -459,10 +508,13 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add-truck" element={<AddTruck />} />
         <Route path="/tracking" element={<Tracking />} />
-        <Route path="/truck-analytics" element={<TruckAnalytics />} />
         <Route path="/driver-info" element={<DriverInfo />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/features" element={<Features />} /> {/* Add Features route */}
+        <Route path="/features" element={<Features />} />
+        <Route path="/fuel-consumption" element={<FuelConsumption />} /> {/* Added Route */}
+        <Route path="/trip-scheduling" element={<TripScheduling />} /> {/* Added Route */}
+        <Route path="/maintenance" element={<Maintenance />} /> {/* Added Route */}
+        <Route path="/alerts" element={<Alerts />} /> {/* Added Route */}
       </Routes>
     </>
   );
