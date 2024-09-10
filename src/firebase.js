@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC58iCNNe-3EFGzZ4Nq364CLCuJyDRaHpM",
-    authDomain: "teletracker-92ded.firebaseapp.com",
-    projectId: "teletracker-92ded",
-    storageBucket: "teletracker-92ded.appspot.com",
-    messagingSenderId: "632179386049",
-    appId: "1:632179386049:web:30d2b230590c147e609640",
-    measurementId: "G-95B88TCSZD"
-};
+    apiKey: "AIzaSyCfJYbeipACZzekVzt-MsX0ypBUoWTCsqw",
+    authDomain: "teletrack-fc322.firebaseapp.com",
+    projectId: "teletrack-fc322",
+    storageBucket: "teletrack-fc322.appspot.com",
+    messagingSenderId: "434656208355",
+    appId: "1:434656208355:web:04a09d8a3fa65b26762cd6",
+    measurementId: "G-SDJ299PL6F"
+  };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
