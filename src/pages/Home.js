@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaTruck, FaGasPump, FaRoute, FaShieldAlt, FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import styled from '@emotion/styled';
 import './Home.css';
-import backgroundVideo from '../assets/background-video.mp4';
+import backgroundVideo from '../assets/backHome.mp4';
 
 const IconWrapper = styled.div`
   font-size: 3rem;
